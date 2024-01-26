@@ -12,7 +12,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
 </script>
 
 <template>
-  <section id="skills" class="py-40">
+  <section id="skills" class="py-20 lg:py-40 px-4 xl:px-0">
     <div
       ref="target"
       class="container mx-auto"
@@ -23,15 +23,17 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
       "
     >
       <h1
-        class="relative text-5xl font-bold w-fit mx-auto bg-gradient-to-r from-[#a600ff] vi-[#ff00e8] to-[#ff8000] bg-clip-text text-transparent"
+        class="relative text-4xl md:text-5xl font-bold w-fit mx-auto bg-gradient-to-r from-[#a600ff] vi-[#ff00e8] to-[#ff8000] bg-clip-text text-transparent"
       >
         Habilidades
       </h1>
-      <h2 class="text-center text-2xl font-medium mt-4">
+      <h2
+        class="text-center text-lg md:text-2xl font-medium mt-4 text-dark-coffee dark:text-white"
+      >
         Las habilidades, herramientas y tecnologías que he utilizado:
       </h2>
       <div
-        class="grid grid-cols-8 gap-y-14 mt-10"
+        class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-y-14 mt-10 text-dark-coffee dark:text-white"
         :class="
           targetIsVisible
             ? 'animate-fade-left animate-ease-in-out animate-duration-1000 opacity-100'
@@ -78,9 +80,19 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
           <span class="text-xl font-medium mt-2">MongoDB</span>
         </div>
 
-        <div class="grid place-items-center col-start-2">
+        <div class="grid place-items-center">
           <Icon class="w-16 h-16" name="logos:mysql-icon" />
           <span class="text-xl font-medium mt-2">MySQL</span>
+        </div>
+
+        <div class="grid place-items-center">
+          <Icon class="w-16 h-16" name="logos:supabase-icon" />
+          <span class="text-xl font-medium mt-2">Supabase</span>
+        </div>
+
+        <div class="grid place-items-center">
+          <Icon class="w-16 h-16" name="logos:firebase" />
+          <span class="text-xl font-medium mt-2">Firebase</span>
         </div>
 
         <div class="grid place-items-center">

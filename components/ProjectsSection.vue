@@ -40,7 +40,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
 </script>
 
 <template>
-  <section id="projects" class="py-40 bg-[#262626]">
+  <section id="projects" class="py-20 lg:py-40 bg-gray-100 dark:bg-[#262626]">
     <div
       ref="target"
       :class="
@@ -50,24 +50,26 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
       "
     >
       <h1
-        class="relative text-5xl font-bold w-fit mx-auto bg-gradient-to-r from-[#a600ff] vi-[#ff00e8] to-[#ff8000] bg-clip-text text-transparent pb-1"
+        class="relative text-4xl md:text-5xl font-bold w-fit mx-auto bg-gradient-to-r from-[#a600ff] vi-[#ff00e8] to-[#ff8000] bg-clip-text text-transparent pb-1"
       >
         Proyectos
       </h1>
-      <h2 class="text-center text-2xl font-medium mt-4">
+      <h2
+        class="text-center text-lg md:text-2xl font-medium mt-4 text-dark-coffee dark:text-white"
+      >
         Aquí hay un resumen de mis proyectos desarrollados:
       </h2>
       <div class="relative">
         <Swiper
           ref="swiperRef"
-          class="container mx-auto mt-10"
+          class="mt-10"
           :class="
             targetIsVisible
               ? 'animate-fade-right animate-ease-in-out animate-duration-1000 opacity-100'
               : 'opacity-0'
           "
           :modules="[SwiperEffectCoverflow]"
-          :slides-per-view="1.5"
+          :slides-per-view="1.2"
           :slides-per-group="1"
           :centered-slides="true"
           :loop="true"
@@ -77,7 +79,18 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
             slideShadows: false,
             rotate: 0,
             scale: 0.8,
-            stretch: 550,
+            stretch: 100,
+          }"
+          :breakpoints="{
+            1024: {
+              slidesPerView: 1.5,
+            },
+            1440: {
+              slidesPerView: 1.9,
+              coverflowEffect: {
+                stretch: 400,
+              },
+            },
           }"
         >
           <SwiperSlide
@@ -87,7 +100,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
           >
             <div class="relative group">
               <NuxtImg
-                class="relative w-[1024px] h-auto mx-auto rounded-3xl"
+                class="h-auto mx-auto rounded-xl md:rounded-3xl"
                 :src="project.image"
                 format="webp"
                 width="1852"
@@ -105,13 +118,13 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
           </SwiperSlide>
         </Swiper>
         <button
-          class="absolute top-1/2 -translate-y-1/2 left-4 hover:scale-125 transition-transform z-10"
+          class="hidden lg:block absolute top-1/2 -translate-y-1/2 left-4 hover:scale-125 transition-transform z-10 text-dark-coffee dark:text-white"
           @click="slidePrev"
         >
           <Icon name="majesticons:chevron-left" size="50" />
         </button>
         <button
-          class="absolute top-1/2 -translate-y-1/2 right-4 hover:scale-125 transition-transform z-10"
+          class="hidden lg:block absolute top-1/2 -translate-y-1/2 right-4 hover:scale-125 transition-transform z-10 text-dark-coffee dark:text-white"
           @click="slideNext"
         >
           <Icon name="majesticons:chevron-right" size="50" />

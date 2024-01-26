@@ -14,7 +14,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
 <template>
   <section
     id="about"
-    class="flex items-center justify-center py-40 bg-[#262626]"
+    class="flex items-center justify-center py-20 md:py-40 bg-gray-100 dark:bg-[#262626] px-4"
   >
     <div
       ref="target"
@@ -26,12 +26,12 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
       "
     >
       <h1
-        class="relative text-5xl font-bold w-fit mx-auto bg-gradient-to-r from-[#a600ff] vi-[#ff00e8] to-[#ff8000] bg-clip-text text-transparent"
+        class="relative text-4xl md:text-5xl font-bold w-fit mx-auto bg-gradient-to-r from-[#a600ff] vi-[#ff00e8] to-[#ff8000] bg-clip-text text-transparent"
       >
         Sobre Mí
       </h1>
       <p
-        class="text-2xl text-dark-coffee dark:text-white font-medium mt-10 max-w-screen-xl mx-auto"
+        class="md:text-2xl text-dark-coffee dark:text-white font-medium mt-10 max-w-screen-xl mx-auto"
         :class="
           targetIsVisible
             ? 'animate-fade-right animate-ease-in-out animate-duration-1000 opacity-100'

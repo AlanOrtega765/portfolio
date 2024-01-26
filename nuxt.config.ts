@@ -1,5 +1,16 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/jpg',
+          href: '/img/person-animated.jpg',
+        },
+      ],
+    },
+  },
   modules: [
     'nuxt-icon',
     '@nuxt/image',
@@ -18,6 +29,6 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   swiper: {
-    modules: ['effect-coverflow']
-  }
+    modules: ['effect-coverflow'],
+  },
 });

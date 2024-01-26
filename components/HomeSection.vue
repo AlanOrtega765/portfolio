@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useIntersectionObserver } from '@vueuse/core';
 
+const { scrollToSection } = useHelpers();
+
 const target = ref(null);
 const targetIsVisible = ref(false);
 
@@ -14,7 +16,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
 <template>
   <section
     id="home"
-    class="flex justify-center items-center h-[100dvh] px-4 lg:px-0"
+    class="flex justify-center items-center h-svh px-4 lg:px-0"
   >
     <div
       ref="target"
@@ -34,7 +36,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
         height="256"
       />
       <h1
-        class="text-xl lg:text-5xl text-center font-bold mx-auto leading-tight mt-4 text-dark-coffee dark:text-white"
+        class="text-xl md:text-4xl lg:text-5xl text-center font-bold mx-auto leading-tight mt-4 text-dark-coffee dark:text-white"
       >
         <span
           class="bg-gradient-to-r from-[#a600ff] vi-[#ff00e8] to-[#ff8000] bg-clip-text text-transparent"
@@ -43,19 +45,23 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
         Diseñador de Experiencias Web y Desarrollador Autodidacta.
       </h1>
       <p
-        class="text-center text-dark-coffee dark:text-stone-300 text-sm lg:text-lg font-semibold w-full lg:w-[600px] mx-auto mt-4"
+        class="text-center text-dark-coffee dark:text-stone-300 text-sm md:text-lg font-semibold w-full md:w-[600px] mx-auto mt-4"
       >
         Explorando el Universo Digital con Creatividad, Proactividad y una
         Pasión Inextinguible por el Desarrollo Web.
       </p>
-      <div class="flex justify-center gap-x-2 lg:gap-x-4 mt-6">
-        <button
-          class="bg-dark-coffee text-white dark:bg-white dark:text-dark-coffee text-xs lg:text-lg font-bold py-2 px-4 lg:py-4 lg:px-8 rounded-full uppercase"
+      <div class="flex justify-center gap-x-2 md:gap-x-4 mt-6">
+        <NuxtLink
+          class="bg-dark-coffee text-white dark:bg-white dark:text-dark-coffee text-xs md:text-lg font-bold py-2 px-4 md:py-4 md:px-8 rounded-full uppercase"
+          href="/curriculum-vitae.pdf"
+          target="_blank"
+          download
         >
           Descargar CV
-        </button>
+        </NuxtLink>
         <button
-          class="border border-dark-coffee dark:border-white dark:text-white text-dark-coffee text-xs lg:text-lg font-bold py-2 px-4 lg:py-4 lg:px-8 rounded-full uppercase"
+          class="border border-dark-coffee dark:border-white dark:text-white text-dark-coffee text-xs md:text-lg font-bold py-2 px-4 md:py-4 md:px-8 rounded-full uppercase"
+          @click="scrollToSection('projects')"
         >
           Ver Proyectos
         </button>
