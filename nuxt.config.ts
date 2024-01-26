@@ -30,6 +30,7 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'dark',
     classSuffix: '',
+    
   },
   swiper: {
     modules: ['effect-coverflow'],
