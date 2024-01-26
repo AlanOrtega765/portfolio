@@ -110,9 +110,11 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
               <NuxtLink
                 :href="project.url"
                 target="_blank"
-                class="absolute top-4 right-4 p-2 rounded-full bg-[#1a1a18] hidden group-hover:block opacity-60 hover:opacity-90 transition-opacity"
+                class="absolute top-0 right-0 lg:top-4 lg:right-4 w-full h-full lg:w-fit lg:h-fit p-2 rounded-full lg:bg-[#1a1a18] lg:hidden lg:group-hover:block lg:opacity-60 lg:hover:opacity-90 transition-opacity"
               >
-                <Icon name="gravity-ui:link" size="30" />
+                <div class="hidden lg:block">
+                  <Icon name="gravity-ui:link" size="30" />
+                </div>
               </NuxtLink>
             </div>
           </SwiperSlide>
