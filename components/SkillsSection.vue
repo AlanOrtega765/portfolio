@@ -36,7 +36,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
         class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-y-14 mt-10 text-dark-coffee dark:text-white"
         :class="
           targetIsVisible
-            ? 'animate-fade-left animate-ease-in-out animate-duration-1000 opacity-100'
+            ? 'animate-fade-right animate-ease-in-out animate-duration-1000 opacity-100'
             : 'opacity-0'
         "
       >
