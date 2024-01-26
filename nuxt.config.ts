@@ -20,7 +20,8 @@ export default defineNuxtConfig({
     'nuxt-swiper',
   ],
   image: {
-    provider: 'netlify'
+    provider: 'netlify',
+    format: ['webp']
   },
   googleFonts: {
     families: {
