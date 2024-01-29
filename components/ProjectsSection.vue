@@ -14,17 +14,12 @@ const projects = ref([
   {
     id: 2,
     image: '/img/projects/project-2.png',
-    url: 'https://recintos-deportivos-uta.netlify.app/',
-  },
-  {
-    id: 3,
-    image: '/img/projects/project-3.png',
     url: 'https://tic-tac-toe-nuxt.netlify.app',
   },
-  { id: 4, image: '/img/projects/project-4.png', url: '#' },
+  { id: 3, image: '/img/projects/project-3.png', url: '#' },
   {
-    id: 5,
-    image: '/img/projects/project-5.png',
+    id: 4,
+    image: '/img/projects/project-4.png',
     url: 'https://jadoo-nuxt.netlify.app/',
   },
 ]);
@@ -86,10 +81,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
               slidesPerView: 1.5,
             },
             1440: {
-              slidesPerView: 1.9,
-              coverflowEffect: {
-                stretch: 400,
-              },
+              slidesPerView: 2,
             },
           }"
         >
@@ -100,7 +92,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
           >
             <div class="relative group">
               <NuxtImg
-                class="h-auto mx-auto rounded-xl md:rounded-3xl"
+                class="h-full w-auto mx-auto rounded-xl md:rounded-3xl"
                 :src="project.image"
                 format="webp"
                 width="1852"
@@ -120,13 +112,13 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
           </SwiperSlide>
         </Swiper>
         <button
-          class="hidden lg:block absolute top-1/2 -translate-y-1/2 left-4 hover:scale-125 transition-transform z-10 text-dark-coffee dark:text-white"
+          class="hidden lg:block absolute top-1/2 -translate-y-1/2 left-4 hover:scale-125 bg-black/50 hover:bg-black/80 rounded-full transition-transform z-10 text-dark-coffee dark:text-white"
           @click="slidePrev"
         >
           <Icon name="majesticons:chevron-left" size="50" />
         </button>
         <button
-          class="hidden lg:block absolute top-1/2 -translate-y-1/2 right-4 hover:scale-125 transition-transform z-10 text-dark-coffee dark:text-white"
+          class="hidden lg:block absolute top-1/2 -translate-y-1/2 right-4 hover:scale-125 bg-black/50 hover:bg-black/80 rounded-full transition-transform z-10 text-dark-coffee dark:text-white"
           @click="slideNext"
         >
           <Icon name="majesticons:chevron-right" size="50" />
