@@ -16,7 +16,7 @@ const projects = ref([
     image: '/img/projects/project-2.png',
     url: 'https://tic-tac-toe-nuxt.netlify.app',
   },
-  { id: 3, image: '/img/projects/project-3.png', url: '#' },
+  { id: 3, image: '/img/projects/project-3.png', url: 'https://appolly-app.netlify.app/' },
   {
     id: 4,
     image: '/img/projects/project-4.png',
