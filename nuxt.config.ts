@@ -27,6 +27,9 @@ export default defineNuxtConfig({
         format: 'webp',
         quality: 80,
       },
+      http: {
+        domains: ['https://alan-ortega-portfolio.netlify.app']
+      }
     },
   },
   googleFonts: {
