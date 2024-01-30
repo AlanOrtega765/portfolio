@@ -22,15 +22,8 @@ export default defineNuxtConfig({
   ],
   image: {
     provider: 'netlify',
-    ipx: {
-      baseURL: 'https://alan-ortega-portfolio.netlify.app/',
-      modifiers: {
-        format: 'webp',
-        quality: 80,
-      },
-      http: {
-        domains: ['https://alan-ortega-portfolio.netlify.app'],
-      },
+    netlify: {
+      baseURL: 'https://alan-ortega-portfolio.netlify.app',
     },
   },
   googleFonts: {
