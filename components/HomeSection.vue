@@ -27,7 +27,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
           : 'opacity-0'
       "
     >
-      <NuxtPicture
+      <NuxtImg
         class="rounded-full mx-auto w-52 h-52 lg:w-64 lg:h-64"
         src="/img/person-animated.jpg"
         format="webp"
