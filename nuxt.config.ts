@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
   ],
   image: {
+    provider: 'netlify',
     ipx: {
       baseURL: 'https://alan-ortega-portfolio.netlify.app/',
       modifiers: {
@@ -28,8 +29,8 @@ export default defineNuxtConfig({
         quality: 80,
       },
       http: {
-        domains: ['https://alan-ortega-portfolio.netlify.app']
-      }
+        domains: ['https://alan-ortega-portfolio.netlify.app'],
+      },
     },
   },
   googleFonts: {
