@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  ssr: false,
   app: {
     head: {
       link: [
@@ -19,9 +20,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
   ],
-  image: {
-    provider: 'ipx'
-  },
   googleFonts: {
     families: {
       Quicksand: '300..700',
