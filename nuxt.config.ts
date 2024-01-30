@@ -20,6 +20,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
   ],
+  image: {
+    domains: ['https://alan-ortega-portfolio.netlify.app/']
+  },
   googleFonts: {
     families: {
       Quicksand: '300..700',
