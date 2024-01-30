@@ -19,6 +19,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
   ],
+  image: {
+    provider: 'ipx'
+  },
   googleFonts: {
     families: {
       Quicksand: '300..700',
