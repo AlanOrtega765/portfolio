@@ -29,7 +29,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
     >
       <NuxtImg
         class="rounded-full mx-auto w-52 h-52 lg:w-64 lg:h-64"
-        src="/.netlify/functions/img/person-animated.jpg"
+        src="/img/person-animated.jpg"
         format="webp"
         loading="lazy"
         width="256"

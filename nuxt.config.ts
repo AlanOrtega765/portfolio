@@ -20,13 +20,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
   ],
   image: {
-    ipx: {
-      baseURL: 'https://alan-ortega-portfolio.netlify.app',
-      modifiers: {
-        format: 'webp',
-        quality: 80,
-      },
-    },
+    provider: 'netlify',
   },
   googleFonts: {
     families: {
