@@ -21,15 +21,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
   ],
   image: {
-    provider: 'proxy',
-    providers: {
-      proxy: {
-        provider: 'ipx',
-        options: {
-          baseURL: `https://alan-ortega-portfolio.netlify.app/ipx`,
-        },
-      },
-    },
+    provider: 'netlify',
   },
   googleFonts: {
     families: {
