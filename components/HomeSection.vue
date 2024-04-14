@@ -1,16 +1,6 @@
 <script setup lang="ts">
-import { useIntersectionObserver } from '@vueuse/core';
-
 const { scrollToSection } = useHelpers();
-
-const target = ref(null);
-const targetIsVisible = ref(false);
-
-useIntersectionObserver(target, ([{ isIntersecting }]) => {
-  if (isIntersecting) {
-    return (targetIsVisible.value = isIntersecting);
-  }
-});
+const { target, targetIsVisible } = useTargetObserver();
 </script>
 
 <template>
@@ -29,9 +19,9 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
     >
       <NuxtImg
         class="rounded-full mx-auto w-52 h-52 lg:w-64 lg:h-64"
-        src="/img/person-animated.jpg"
+        src="/img/person-animated.webp"
         format="webp"
-        loading="lazy"
+        loading="eager"
         width="256"
         height="256"
       />
@@ -53,7 +43,7 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
       <div class="flex justify-center gap-x-2 md:gap-x-4 mt-6">
         <NuxtLink
           class="bg-dark-coffee text-white dark:bg-white dark:text-dark-coffee text-xs md:text-lg font-bold py-2 px-4 md:py-4 md:px-8 rounded-full uppercase"
-          href="/curriculum-vitae.pdf"
+          href="/curriculum-dev.pdf"
           target="_blank"
           download
         >

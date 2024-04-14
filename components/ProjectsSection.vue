@@ -1,37 +1,30 @@
 <script setup lang="ts">
-import { useIntersectionObserver } from '@vueuse/core';
+import type { Project } from "~/types";
 
-const swiperRef = ref();
-const target = ref(null);
-const targetIsVisible = ref(false);
+const { target, targetIsVisible } = useTargetObserver();
 
-const projects = ref([
+const projects = ref<Project[]>([
   {
     id: 1,
-    image: '/img/projects/project-1.png',
-    url: 'https://movies-hub-nuxt.netlify.app/',
+    image: "/img/projects/project-1.webp",
+    url: "https://movies-hub-nuxt.netlify.app/",
   },
   {
     id: 2,
-    image: '/img/projects/project-2.png',
-    url: 'https://tic-tac-toe-nuxt.netlify.app',
+    image: "/img/projects/project-2.webp",
+    url: "https://tic-tac-toe-nuxt.netlify.app",
   },
-  { id: 3, image: '/img/projects/project-3.png', url: 'https://appolly-app.netlify.app/' },
+  {
+    id: 3,
+    image: "/img/projects/project-3.webp",
+    url: "https://appolly-app.netlify.app/",
+  },
   {
     id: 4,
-    image: '/img/projects/project-4.png',
-    url: 'https://jadoo-nuxt.netlify.app/',
+    image: "/img/projects/project-4.webp",
+    url: "https://jadoo-nuxt.netlify.app/",
   },
 ]);
-
-const slidePrev = () => swiperRef.value.$el.swiper.slidePrev();
-const slideNext = () => swiperRef.value.$el.swiper.slideNext();
-
-useIntersectionObserver(target, ([{ isIntersecting }]) => {
-  if (isIntersecting) {
-    return (targetIsVisible.value = isIntersecting);
-  }
-});
 </script>
 
 <template>
@@ -55,74 +48,10 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
         Aquí hay un resumen de mis proyectos desarrollados:
       </h2>
       <div class="relative">
-        <Swiper
-          ref="swiperRef"
-          class="mt-10"
-          :class="
-            targetIsVisible
-              ? 'animate-fade-right animate-ease-in-out animate-duration-1000 opacity-100'
-              : 'opacity-0'
-          "
-          :modules="[SwiperEffectCoverflow]"
-          :slides-per-view="1.2"
-          :slides-per-group="1"
-          :centered-slides="true"
-          :loop="true"
-          :effect="'coverflow'"
-          :coverflow-effect="{
-            depth: 300,
-            slideShadows: false,
-            rotate: 0,
-            scale: 0.8,
-            stretch: 100,
-          }"
-          :breakpoints="{
-            1024: {
-              slidesPerView: 1.5,
-            },
-            1440: {
-              slidesPerView: 2,
-            },
-          }"
-        >
-          <SwiperSlide
-            class="group"
-            v-for="project in projects"
-            :key="project.id"
-          >
-            <div class="relative group">
-              <NuxtImg
-                class="h-full w-auto mx-auto rounded-xl md:rounded-3xl"
-                :src="project.image"
-                format="webp"
-                width="1852"
-                height="954"
-                :loading="'lazy'"
-              />
-              <NuxtLink
-                :href="project.url"
-                target="_blank"
-                class="absolute top-0 right-0 lg:top-4 lg:right-4 w-full h-full lg:w-fit lg:h-fit p-2 rounded-full lg:bg-[#1a1a18] lg:hidden lg:group-hover:block lg:opacity-60 lg:hover:opacity-90 transition-opacity"
-              >
-                <div class="hidden lg:block">
-                  <Icon name="gravity-ui:link" size="30" />
-                </div>
-              </NuxtLink>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-        <button
-          class="hidden lg:block absolute top-1/2 -translate-y-1/2 left-4 hover:scale-125 bg-black/50 hover:bg-black/80 rounded-full transition-transform z-10 text-dark-coffee dark:text-white"
-          @click="slidePrev"
-        >
-          <Icon name="majesticons:chevron-left" size="50" />
-        </button>
-        <button
-          class="hidden lg:block absolute top-1/2 -translate-y-1/2 right-4 hover:scale-125 bg-black/50 hover:bg-black/80 rounded-full transition-transform z-10 text-dark-coffee dark:text-white"
-          @click="slideNext"
-        >
-          <Icon name="majesticons:chevron-right" size="50" />
-        </button>
+        <SwipersProjects
+          :projects="projects"
+          :target-is-visible="targetIsVisible"
+        />
       </div>
     </div>
   </section>

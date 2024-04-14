@@ -6,10 +6,11 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'icon',
-          type: 'image/jpg',
-          href: '/img/person-animated.jpg',
+          type: 'image/webp',
+          href: '/img/person-animated.webp',
         },
       ],
+      title: 'Portfolio | Alan Ortega'
     },
   },
   modules: [
@@ -20,9 +21,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
   ],
-  image: {
-    provider: 'netlify',
-  },
+  // image: {
+  //   provider: 'netlify',
+  // },
   googleFonts: {
     families: {
       Quicksand: '300..700',

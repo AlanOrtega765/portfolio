@@ -1,14 +1,5 @@
 <script setup lang="ts">
-import { useIntersectionObserver } from '@vueuse/core';
-
-const target = ref(null);
-const targetIsVisible = ref(false);
-
-useIntersectionObserver(target, ([{ isIntersecting }]) => {
-  if (isIntersecting) {
-    return (targetIsVisible.value = isIntersecting);
-  }
-});
+const { target, targetIsVisible } = useTargetObserver();
 </script>
 
 <template>
@@ -41,15 +32,13 @@ useIntersectionObserver(target, ([{ isIntersecting }]) => {
         Soy un apasionado desarrollador web con un fuerte compromiso en la
         creación de sitios web estéticamente atractivos y funcionales. Mi
         fascinación por el desarrollo va más allá del código, ya que encuentro
-        inspiración en la creación de experiencias visuales impactantes. Además
-        de mi dedicación al mundo digital, soy un entusiasta del ejercicio
-        físico, encontrando un equilibrio entre el mundo virtual y el bienestar
-        físico. Mi búsqueda constante de conocimiento me impulsa a explorar y
-        adoptar nuevas tecnologías web, siempre buscando mejorar el rendimiento
-        y la experiencia del usuario. Con cada proyecto, me esfuerzo por
-        fusionar la creatividad con la eficiencia técnica, creando soluciones
-        que no solo satisfacen las necesidades del cliente, sino que también
-        elevan el estándar de la experiencia en línea.
+        inspiración en la creación de experiencias visuales impactantes. Mi
+        búsqueda constante de conocimiento me impulsa a explorar y adoptar
+        nuevas tecnologías web, siempre buscando mejorar el rendimiento y la
+        experiencia del usuario. Con cada proyecto, me esfuerzo por fusionar la
+        creatividad con la eficiencia técnica, creando soluciones que no solo
+        satisfacen las necesidades del cliente, sino que también elevan el
+        estándar de la experiencia en línea.
       </p>
     </div>
   </section>
