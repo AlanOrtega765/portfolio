@@ -5,35 +5,32 @@ export default defineNuxtConfig({
     head: {
       link: [
         {
-          rel: 'icon',
-          type: 'image/webp',
-          href: '/img/person-animated.webp',
+          rel: "icon",
+          type: "image/webp",
+          href: "/img/person-animated.webp",
         },
       ],
-      title: 'Portfolio | Alan Ortega'
+      title: "Portfolio | Alan Ortega",
     },
   },
   modules: [
-    'nuxt-icon',
-    '@nuxt/image',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/google-fonts',
-    '@nuxtjs/tailwindcss',
-    'nuxt-swiper',
+    "nuxt-icon",
+    "@nuxt/image",
+    "@nuxtjs/color-mode",
+    "@nuxtjs/google-fonts",
+    "@nuxtjs/tailwindcss",
+    "nuxt-swiper",
   ],
-  // image: {
-  //   provider: 'netlify',
-  // },
   googleFonts: {
     families: {
-      Quicksand: '300..700',
+      Quicksand: "300..700",
     },
   },
   colorMode: {
-    preference: 'dark',
-    classSuffix: '',
+    preference: "dark",
+    classSuffix: "",
   },
   swiper: {
-    modules: ['effect-coverflow'],
+    modules: ["effect-coverflow"],
   },
 });
