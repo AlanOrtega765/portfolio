@@ -1,30 +1,6 @@
 <script setup lang="ts">
-import type { Project } from "~/types";
-
-const { target, targetIsVisible } = useTargetObserver();
-
-const projects = ref<Project[]>([
-  {
-    id: 1,
-    image: "/img/projects/project-1.webp",
-    url: "https://movies-hub-nuxt.netlify.app/",
-  },
-  {
-    id: 2,
-    image: "/img/projects/project-2.webp",
-    url: "https://tic-tac-toe-nuxt.netlify.app",
-  },
-  {
-    id: 3,
-    image: "/img/projects/project-3.webp",
-    url: "https://appolly-app.netlify.app/",
-  },
-  {
-    id: 4,
-    image: "/img/projects/project-4.webp",
-    url: "https://jadoo-nuxt.netlify.app/",
-  },
-]);
+import { projects } from '@/constants'
+const { target, targetIsVisible } = useTargetObserver()
 </script>
 
 <template>
@@ -47,11 +23,8 @@ const projects = ref<Project[]>([
       >
         Aquí hay un resumen de mis proyectos desarrollados:
       </h2>
-      <div class="relative">
-        <SwipersProjects
-          :projects="projects"
-          :target-is-visible="targetIsVisible"
-        />
+      <div class="relative grid grid-cols-3 gap-6 container mx-auto mt-10">
+        <ProjectCard :projects="projects" />
       </div>
     </div>
   </section>

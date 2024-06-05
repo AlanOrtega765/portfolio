@@ -1,10 +1,12 @@
 export const useHelpers = () => {
   const scrollToSection = (section: string) => {
-    const sectionElement = document.getElementById(section);
+    const sectionElement = document.getElementById(section)
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth' });
+      sectionElement.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
-  return { scrollToSection };
-};
+  const getActualYear = () => new Date().getUTCFullYear()
+
+  return { scrollToSection, getActualYear }
+}

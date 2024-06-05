@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import type { Link } from "~/types";
+import { navLinks } from '@/constants'
 
-defineProps<{
-  links: Link[];
-}>();
+const { scrollToSection } = useHelpers()
+const colorMode = useColorMode()
 
-const { scrollToSection } = useHelpers();
-const colorMode = useColorMode();
-
-const isOpenNav = ref(false);
+const isOpenNav = ref(false)
 
 const toggleColorMode = () => {
-  colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
-};
+  colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
+}
 </script>
 
 <template>
@@ -31,7 +27,7 @@ const toggleColorMode = () => {
           class="lg:flex lg:relative lg:top-0 lg:w-fit lg:items-center flex-col lg:flex-row w-full items-start absolute top-20 left-0 gap-x-4 gap-y-4 bg-white dark:bg-dark-coffee lg:dark:bg-transparent shadow-lg lg:shadow-none py-10 lg:py-0 rounded-b-2xl px-4 lg:px-0"
           :class="isOpenNav ? 'flex' : 'hidden'"
         >
-          <li v-for="link in links" :key="link.section">
+          <li v-for="link in navLinks" :key="link.section">
             <NuxtLink
               class="text-xl lg:text-base font-bold text-dark-coffee lg:text-dark-coffee/80 hover:text-dark-coffee dark:text-white lg:dark:text-stone-300 dark:hover:text-white transition-colors cursor-pointer px-3 py-2"
               @click="scrollToSection(link.section), (isOpenNav = false)"

@@ -1,17 +1,7 @@
 <script setup lang="ts">
-import type { Link } from "~/types";
+import { navLinks } from '@/constants'
 
-defineProps<{
-  links: Link[];
-}>();
-
-const { scrollToSection } = useHelpers();
-const actualYear = () => {
-  const date = new Date();
-  const year = date.getUTCFullYear();
-
-  return year;
-};
+const { scrollToSection, getActualYear } = useHelpers()
 </script>
 
 <template>
@@ -40,7 +30,7 @@ const actualYear = () => {
       <div>
         <h2 class="text-3xl font-bold">Enlaces</h2>
         <ul class="flex flex-col gap-y-2 mt-4">
-          <li v-for="link in links" :key="link.section">
+          <li v-for="link in navLinks" :key="link.section">
             <NuxtLink
               v-if="link.section !== 'contact'"
               class="cursor-pointer font-medium text-dark-coffee/80 hover:text-dark-coffee dark:text-white/80 dark:hover:text-white text-xl"
@@ -52,7 +42,7 @@ const actualYear = () => {
       </div>
       <span
         class="flex items-center justify-center gap-x-2 text-center lg:col-span-2 lg:text-xl font-medium"
-        ><Icon name="bx:copyright" /> {{ actualYear() }} Todos los derechos
+        ><Icon name="bx:copyright" /> {{ getActualYear() }} Todos los derechos
         reservados.
       </span>
     </div>

@@ -11,6 +11,9 @@ dependencies:
   '@vueuse/nuxt':
     specifier: ^10.7.2
     version: 10.7.2(nuxt@3.9.3)(vue@3.4.15)
+  nuxt-app:
+    specifier: 'link:'
+    version: 'link:'
   nuxt-swiper:
     specifier: ^1.2.2
     version: 1.2.2
