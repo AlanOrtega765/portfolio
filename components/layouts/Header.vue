@@ -24,7 +24,7 @@ const toggleColorMode = () => {
           >AO.</NuxtLink
         >
         <ul
-          class="lg:flex lg:relative lg:top-0 lg:w-fit lg:items-center flex-col lg:flex-row w-full items-start absolute top-20 left-0 gap-x-4 gap-y-4 bg-white dark:bg-dark-coffee lg:dark:bg-transparent shadow-lg lg:shadow-none py-10 lg:py-0 rounded-b-2xl px-4 lg:px-0"
+          class="lg:flex lg:relative lg:top-0 lg:w-fit lg:items-center flex-col lg:flex-row w-full items-start absolute top-20 left-0 gap-x-4 gap-y-4 dark:bg-dark-coffee lg:dark:bg-transparent shadow-lg lg:shadow-none py-10 lg:py-0 rounded-b-2xl px-4 lg:px-0"
           :class="isOpenNav ? 'flex' : 'hidden'"
         >
           <li v-for="link in navLinks" :key="link.section">
