@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
-    "nuxt-swiper",
   ],
   googleFonts: {
     families: {
@@ -29,8 +28,5 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "dark",
     classSuffix: "",
-  },
-  swiper: {
-    modules: ["effect-coverflow"],
   },
 });

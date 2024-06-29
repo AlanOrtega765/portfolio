@@ -4,7 +4,7 @@ const { target, targetIsVisible } = useTargetObserver()
 </script>
 
 <template>
-  <section id="projects" class="py-20 lg:py-40 bg-gray-100 dark:bg-[#262626]">
+  <section id="projects" class="px-4 py-20 lg:py-40 bg-gray-100 dark:bg-[#262626]">
     <div
       ref="target"
       :class="
@@ -23,7 +23,7 @@ const { target, targetIsVisible } = useTargetObserver()
       >
         Aquí hay un resumen de mis proyectos desarrollados:
       </h2>
-      <div class="relative grid grid-cols-3 gap-6 container mx-auto mt-10">
+      <div class="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 container mx-auto mt-10">
         <ProjectCard :projects="projects" />
       </div>
     </div>
